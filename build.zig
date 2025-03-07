@@ -10,7 +10,7 @@ pub fn build(b: *std.Build) !void {
     });
 
     lib.linkLibC();
-    lib.defineCMacro("HAVE_CONFIG_H", "1");
+    lib.root_module.addCMacro("HAVE_CONFIG_H", "1");
 
     const config_h = b.addConfigHeader(.{
         .include_path = "config.h",

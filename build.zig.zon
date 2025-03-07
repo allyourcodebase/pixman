@@ -1,10 +1,12 @@
 .{
-    .name = "pixman",
+    .name = .pixman,
     .version = "0.0.0",
+    .fingerprint = 0x16aa7fe7b8a917f6,
+
     .dependencies = .{
         .pixman = .{
             .url = "https://cairographics.org/releases/pixman-0.42.2.tar.gz",
-            .hash = "1220775edeb406081e3a14326ea9aa3e2a9f06099a6c500bf0b3c92a9eb9e0dd67c8",
+            .hash = "N-V-__8AACdzQgB3Xt60BggeOhQybqmqPiqfBgmabFAL8LPJ",
         },
     },
 
