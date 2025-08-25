@@ -3,14 +3,16 @@ const std = @import("std");
 pub fn build(b: *std.Build) !void {
     const upstream = b.dependency("pixman", .{});
 
-    const lib = b.addStaticLibrary(.{
+    const lib = b.addLibrary(.{
         .name = "pixman",
-        .target = b.standardTargetOptions(.{}),
-        .optimize = b.standardOptimizeOption(.{}),
+        .root_module = b.createModule(.{
+            .target = b.standardTargetOptions(.{}),
+            .optimize = b.standardOptimizeOption(.{}),
+        }),
     });
 
     lib.linkLibC();
-    lib.defineCMacro("HAVE_CONFIG_H", "1");
+    lib.root_module.addCMacro("HAVE_CONFIG_H", "1");
 
     const config_h = b.addConfigHeader(.{
         .include_path = "config.h",
