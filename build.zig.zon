@@ -2,16 +2,18 @@
     .name = .pixman,
     .version = "0.0.0",
     .fingerprint = 0x16aa7fe7b8a917f6,
+    .minimum_zig_version = "0.17.0",
 
     .dependencies = .{
         .pixman = .{
-            .url = "https://cairographics.org/releases/pixman-0.42.2.tar.gz",
-            .hash = "N-V-__8AACdzQgB3Xt60BggeOhQybqmqPiqfBgmabFAL8LPJ",
+            .url = "https://gitlab.freedesktop.org/pixman/pixman/-/archive/pixman-0.46.4/pixman-pixman-0.46.4.tar.gz",
+            .hash = "N-V-__8AAFGFLwDqH3MBb66PDaioYrGihvXKTS3FzQVque04",
         },
     },
 
     .paths = .{
         "build.zig",
         "build.zig.zon",
+        "LICENSE",
     },
 }
