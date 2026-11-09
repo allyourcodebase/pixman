@@ -47,13 +47,8 @@ pub fn build(b: *std.Build) !void {
         .files = sources,
     });
 
-    const include = b.addWriteFiles();
-
-    _ = include.addCopyFile(pixman_path.path(b, "pixman.h"), "pixman.h");
-    _ = include.addCopyFile(version_h.getOutputFile(), "pixman-version.h");
-
-    b.addNamedLazyPath("include", include.getDirectory());
-
+    lib.installHeader(pixman_path.path(b, "pixman.h"), "pixman.h");
+    lib.installHeader(version_h.getOutputFile(), "pixman-version.h");
     b.installArtifact(lib);
 }
 
